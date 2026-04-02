@@ -34,8 +34,9 @@ The following are canonical here:
 - `docs/repo-sync-strategy.md`
 - `docs/product-repo-contract-template.md`
 - `docs/portable-to-core-map.md`
-- `agents/claude/*`
-- `agents/codex/*`
+- `docs/agent-catalog.md`
+- `/.claude/agents/*`
+- `/.codex/skills/*`
 - `schemas/*`
 - `content/taxonomy/*`
 - `content/shared-sentences/*`
@@ -49,6 +50,10 @@ shared/grammar-core/
 
 This is the preferred first approach because Claude and Codex agents can only reliably use files that are physically present in the current repo context.
 
+Shared subtree sync should preserve the tool-native paths in this repo, especially:
+- `shared/grammar-core/.claude/agents/*`
+- `shared/grammar-core/.codex/skills/*`
+
 ## Local wrapper rule
 Product repos may keep local agent files, but those must be wrappers.
 
@@ -57,12 +62,14 @@ Their reading order must be:
 2. local repo contracts
 3. task prompt
 
+That means local wrappers should read the shared tool-native files first, then apply local repo constraints, and only then apply the task prompt.
+
 ## Phase 1 scope
 Phase 1 of `grammar-core` includes:
 - canonical didactic docs for verb spelling and parsing
 - canonical governance docs for content, taxonomy, sync, and migration decisions
 - canonical template for local product-repo contracts
-- canonical agent instructions
+- canonical Claude agents and Codex skills
 - first shared schemas
 - first small shared taxonomy
 - first small shared sentence seed set
