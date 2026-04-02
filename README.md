@@ -12,7 +12,7 @@ Provide one shared source of truth for:
 - content governance
 - misconception taxonomy governance
 - shared sentence/content models
-- canonical Claude and Codex agent instructions
+- canonical Claude agents and Codex skills
 - product-repo governance boundaries
 
 ## Why this repo exists
@@ -35,6 +35,7 @@ The following are canonical here:
 - `docs/product-repo-contract-template.md`
 - `docs/portable-to-core-map.md`
 - `docs/agent-catalog.md`
+- `docs/ontleedlab-master-operating-map.md`
 - `/.claude/agents/*`
 - `/.codex/skills/*`
 - `schemas/*`
