@@ -138,9 +138,9 @@ Aliases may be registered in shared canon only if a role has a genuinely common 
 
 ### 2.1 Canonical rule
 
-Canonical misconception definitions live in `grammar-core`.
+Canonical misconception definitions live in `grammar-core`, in the source-of-truth file `content/taxonomy/misconceptions.nl.json`.
 
-Product repos must not silently invent canonical shared misconception codes locally.
+Product repos must not silently invent canonical shared misconception codes locally; changes to shared canon must be proposed in that file in `grammar-core`.
 
 ### 2.2 When a new misconception code is justified
 
