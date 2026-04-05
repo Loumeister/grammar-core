@@ -49,6 +49,7 @@ The following are canonical in `grammar-core`:
 **Schemas and content seeds**
 - `schemas/*` — shared structural schemas
 - `content/shared-sentences/*` — first shared sentence seeds (not yet a full operational sentence bank)
+- `content/taxonomy/*` — canonical taxonomy content, including misconception definitions and codes
 
 ## What is intentionally not canonical here
 
