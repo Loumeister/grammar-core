@@ -43,11 +43,14 @@ The following table defines the shared canonical labels. The canonical label is 
 | `voorzetselvoorwerp` | Prepositional complement | Voorzetselvoorwerp |
 | `bijstelling` | Appositive | Bijstelling |
 | `werkwoordelijk_gezegde` | Verbal predicate (full) | Werkwoordelijk gezegde |
-| `naamwoordelijk_deel` | Nominal predicate part | Naamwoordelijk deel van het gezegde |
+| `naamwoordelijk_gezegde` | Nominal predicate (full) | Naamwoordelijk gezegde |
+| `naamwoordelijk_deel` | Nominal predicate part (the nominal constituent within a nominal predicate) | Naamwoordelijk deel van het gezegde |
 | `bijzin` | Subordinate clause functioning as a clause-level constituent | Bijzin (als zinsdeel) |
 | `nevenschikkend_voegwoord` | Coordinating conjunction | Nevenschikkend voegwoord |
 | `onderschikkend_voegwoord` | Subordinating conjunction | Onderschikkend voegwoord |
 | `bijvoeglijke_bepaling` | Adjectival modifier | Bijvoeglijke bepaling |
+
+**Note on predicate taxonomy**: `werkwoordelijk_gezegde` and `naamwoordelijk_gezegde` are the two top-level predicate types (the full predicate construction). `naamwoordelijk_gezegde` is a top-level predicate label used in products that annotate the whole nominal predicate (the linking verb together with its nominal complement, e.g., "is ziek"). `naamwoordelijk_deel` is a constituent *within* a nominal predicate — the nominal part alone (e.g., "ziek" in "is ziek"). Products that annotate the full nominal predicate construction should map to `naamwoordelijk_gezegde`; products that annotate only the nominal constituent within it should map to `naamwoordelijk_deel`.
 
 **Mapping from common product shorthand to canonical label:**
 
@@ -63,6 +66,7 @@ Product repos often use short keys internally. These are product-local and not s
 | `vv` | `voorzetselvoorwerp` |
 | `bijst` | `bijstelling` |
 | `wg` | `werkwoordelijk_gezegde` |
+| `ng` | `naamwoordelijk_gezegde` |
 | `nwd` | `naamwoordelijk_deel` |
 | `bijzin` | `bijzin` |
 | `vw_neven` | `nevenschikkend_voegwoord` |
