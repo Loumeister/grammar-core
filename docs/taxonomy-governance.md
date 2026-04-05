@@ -43,20 +43,20 @@ The following table defines the shared canonical labels. The canonical label is 
 | `voorzetselvoorwerp` | Prepositional complement | Voorzetselvoorwerp |
 | `bijstelling` | Appositive | Bijstelling |
 | `werkwoordelijk_gezegde` | Verbal predicate (full) | Werkwoordelijk gezegde |
-| `werkwoordelijk_deel` | Non-finite verbal part (the non-finite verbal constituent within a verbal predicate) | Werkwoordelijk deel van het gezegde |
 | `naamwoordelijk_gezegde` | Nominal predicate (full) | Naamwoordelijk gezegde |
-| `naamwoordelijk_deel` | Nominal predicate part (the nominal constituent within a nominal predicate) | Naamwoordelijk deel van het gezegde |
+| `werkwoordelijk_deel` | Verbal part of a nominal predicate (the verbal constituent within a nominal predicate) | Werkwoordelijk deel van het gezegde |
+| `naamwoordelijk_deel` | Nominal part of a nominal predicate (the nominal constituent within a nominal predicate) | Naamwoordelijk deel van het gezegde |
 | `bijzin` | Subordinate clause functioning as a clause-level constituent | Bijzin (als zinsdeel) |
 | `nevenschikkend_voegwoord` | Coordinating conjunction | Nevenschikkend voegwoord |
 | `onderschikkend_voegwoord` | Subordinating conjunction | Onderschikkend voegwoord |
 | `bijvoeglijke_bepaling` | Adjectival modifier | Bijvoeglijke bepaling |
 
-**Note on predicate taxonomy**: `werkwoordelijk_gezegde` and `naamwoordelijk_gezegde` are the two top-level predicate types (the full predicate construction). Each has a corresponding constituent part:
+**Note on predicate taxonomy**: `werkwoordelijk_gezegde` and `naamwoordelijk_gezegde` are the two top-level predicate types (the full predicate construction). `naamwoordelijk_gezegde` has two constituent parts:
 
-- `werkwoordelijk_gezegde` — the full verbal predicate. `werkwoordelijk_deel` is the non-finite verbal constituent within it (e.g., "gelopen" in "heeft hard gelopen"). The finite verb (`persoonsvorm`) is annotated separately and is not part of `werkwoordelijk_deel`.
-- `naamwoordelijk_gezegde` — the full nominal predicate (linking verb + nominal complement, e.g., "is ziek"). `naamwoordelijk_deel` is the nominal constituent within it (e.g., "ziek").
+- `werkwoordelijk_deel` (WD) — the verbal part within a nominal predicate (the copula or linking verb cluster, e.g., "is" in "is ziek")
+- `naamwoordelijk_deel` (NWD) — the nominal part within a nominal predicate (e.g., "ziek" in "is ziek")
 
-Products that annotate the full predicate construction should map to `werkwoordelijk_gezegde` or `naamwoordelijk_gezegde`. Products that annotate only the constituent part within the predicate should map to `werkwoordelijk_deel` or `naamwoordelijk_deel` respectively.
+`werkwoordelijk_gezegde` has no canonical sub-parts in this taxonomy. Products that annotate the full predicate construction use `werkwoordelijk_gezegde` or `naamwoordelijk_gezegde`. Products that annotate the parts of a nominal predicate separately use `werkwoordelijk_deel` and `naamwoordelijk_deel`.
 
 **Mapping from common product shorthand to canonical label:**
 
@@ -72,8 +72,8 @@ Product repos often use short keys internally. These are product-local and not s
 | `vv` | `voorzetselvoorwerp` |
 | `bijst` | `bijstelling` |
 | `wg` | `werkwoordelijk_gezegde` |
-| `wd` | `werkwoordelijk_deel` |
 | `ng` | `naamwoordelijk_gezegde` |
+| `wd` | `werkwoordelijk_deel` |
 | `nwd` | `naamwoordelijk_deel` |
 | `bijzin` | `bijzin` |
 | `vw_neven` | `nevenschikkend_voegwoord` |
