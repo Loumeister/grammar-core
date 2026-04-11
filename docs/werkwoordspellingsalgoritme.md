@@ -29,6 +29,16 @@ Niet in scope van dit document:
 - productlokale datastructuren
 - volledige lexicale uitzonderingslijsten per productrepo
 
+## Terminologie en downstream formulering
+Binnen `grammar-core` blijven **ruwe stam** en **orthografische stam** de canonieke technische termen.
+
+Downstream productrepo's mogen in leerling- of docentgerichte uitleg vereenvoudigde formuleringen gebruiken, bijvoorbeeld:
+- `stam (infinitief minus -en)` als uitlegformule voor de ruwe stam
+- `ik-vorm` als zichtbare TT-vorm zonder extra uitgang
+- `ik-vorm + t` als leerlinggerichte formulering voor de derde persoon enkelvoud in de tegenwoordige tijd
+
+Die vereenvoudigde formuleringen mogen de technische onderscheiding niet vervangen waar die inhoudelijk nodig blijft. Vooral bij `d/t`-keuze, `v/z`-normalisatie en andere gevallen waarin de ruwe stam en de orthografische stam uit elkaar lopen, blijft de technische terminologie leidend.
+
 ## Niet-onderhandelbare volgorde
 Werkwoordspelling volgt altijd deze hoofdlijn:
 
@@ -168,7 +178,13 @@ Voorbeelden:
 - `leven -> leef`
 - `lozen -> loos`
 - `maken -> maak`
+- `bellen -> bel`
 - `ruziën -> ruzie`
+
+Randgeval:
+- bij recente Engelse leenwerkwoorden is de normalisatie rond klinkerlengte niet altijd even productief als bij volledig vernederlandste werkwoorden
+- `chatten -> chat` past nog in het reguliere patroon, maar vormen als `updaten` en `deleten` vragen om zorgvuldige lokale voorbeeldkeuze en uitleg
+- de gedeelde canon markeert dit als edge case; concrete voorbeeldselectie en onderwijsformulering blijven productlokaal
 
 ## Canonieke stap 5 - hulpwerkwoordkeuze
 Hulpwerkwoordkeuze is geen primaire spellingstap, maar is wel onderdeel van de gedeelde grammaticale beslislaag.
