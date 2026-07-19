@@ -106,8 +106,8 @@ can install canonical Claude skills directly, without wrapper files. In a produc
 ```
 
 After installing, the sync skill is available as `/grammar-core-toolkit:grammar-core-sync`.
-Use it to sync `shared/grammar-core/` with canon and to route local canon-improvements
-upstream first. Update to newer versions with `/plugin marketplace update grammar-core`.
+Use it to sync `shared/grammar-core/` with canon and to route local canon-improvements upstream first.
+To pick up new plugin versions, run `/plugin marketplace update grammar-core` and then re-run `/plugin install grammar-core-toolkit@grammar-core`.
 
 ## Local wrapper rule
 
