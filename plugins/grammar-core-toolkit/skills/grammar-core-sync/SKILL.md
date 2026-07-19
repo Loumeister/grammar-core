@@ -19,15 +19,15 @@ Use when:
 
 3. Resolve merge conflicts:
    - In shared/grammar-core/: upstream always wins
-   - Local edits belong in docs/product-contract.md, not in the shared tree
-   - Accept canon version: `git checkout --theirs shared/grammar-core/`
+   - Local edits belong in your repo's local product contract (see grammar-core's `docs/product-repo-contract-template.md`), not in the shared tree
+   - Accept canon version: `git checkout --theirs -- shared/grammar-core/`
    - Then mark resolved: `git add shared/grammar-core/`
 
-4. Verify scope:
+4. Verify scope (before updating any references in step 6):
    ```
    git diff --stat
    ```
-   Output must show only `shared/grammar-core/*`
+   At this point, output should show only `shared/grammar-core/*`
 
 5. Run tests:
    - Note any pre-existing failures (don't fix them)
