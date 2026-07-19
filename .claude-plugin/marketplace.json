@@ -7,8 +7,12 @@
   "plugins": [
     {
       "name": "grammar-core-toolkit",
-      "source": "./plugins/grammar-core-toolkit",
-      "description": "Distribueert canonieke grammar-core Claude-skills (nu: grammar-core-sync) naar productrepo's."
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Loumeister/grammar-core.git",
+        "path": "plugins/grammar-core-toolkit"
+      },
+      "description": "Distribueert canonieke grammar-core Claude-skills naar productrepo's."
     }
   ]
 }
