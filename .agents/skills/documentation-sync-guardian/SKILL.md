@@ -1,19 +1,31 @@
-# documentation-sync-guardian
+---
+name: documentation-sync-guardian
+description: Produce evidence-bound post-main documentation summaries only under docs/auto-sync. Use after a commit lands on main or when supplied commit evidence must become a generated summary; do not use for canonical docs, contracts, product specs, workflow design, or architecture decisions.
+---
 
-## Purpose
-Use when a commit has landed on `main` and generated documentation needs a follow-up summary — updates `docs/auto-sync/*` only, without rewriting canonical governance or local product scope.
+# Documentation Sync Guardian
 
 ## Read first
+
+- `docs/documentation-sync-policy.md`
 - `docs/repo-scope-contracts.md`
-- `docs/repo-sync-strategy.md`
 
-## Use when
-- a commit landed on `main`
-- generated documentation needs a follow-up summary
+## Procedure
 
-## Rules
-- update generated documentation only
-- prefer `docs/auto-sync/*`
-- do not rewrite local product scope from shared automation
-- do not invent features or architecture changes
-- tie statements to commit message, changed files, or diff context
+1. Inspect the supplied commit message, changed-file list, commit SHA, and diff excerpt.
+2. Separate directly supported facts from inference. Omit facts that the available evidence cannot support.
+3. Summarize what changed, why it matters, and any clearly evidenced follow-up.
+4. Write only the requested file under `docs/auto-sync/`.
+5. Verify that no canonical document, contract, product specification, or runtime file changed.
+
+## Guardrails
+
+- Tie every claim to the supplied commit evidence.
+- Describe only current repository state; do not invent features, intent, or architecture.
+- Do not repair documentation drift outside `docs/auto-sync/`.
+- Do not rewrite product-local scope from shared automation.
+- Stop and request human review when the requested target is outside `docs/auto-sync/` or the evidence conflicts.
+
+## Output contract
+
+When invoked by automation, return only the Markdown body for the requested generated file. When invoked interactively, also report the target path, evidence inspected, and any material omission caused by insufficient evidence.

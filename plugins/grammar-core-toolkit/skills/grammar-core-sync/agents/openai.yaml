@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grammar Core Sync"
+  short_description: "Safely synchronize the grammar-core subtree"
+  default_prompt: "Use $grammar-core-sync to synchronize this product repository with canonical grammar-core and prepare a validated draft-PR handoff."

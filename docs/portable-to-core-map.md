@@ -1,5 +1,7 @@
 # Portable to core map
 
+> Historical paths under `.codex/skills/` below identify the product-repo source artifacts assessed during the original promotion. Current canonical and product skill discovery uses `.agents/skills/`.
+
 ## 0. Werkwoordlab feedback contract handoff (2026-04-10)
 
 Adopted from staged artifacts in `Loumeister/werkwoordlab` PR #28 (`staging/grammar-core-feedback/`).

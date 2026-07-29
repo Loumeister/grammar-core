@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence-Based Werkwoordspellingsdidactiek"
+  short_description: "Review evidence-informed spelling didactics"
+  default_prompt: "Use $evidence-based-werkwoordspellingsdidactiek to review this verb-spelling proposal against named canonical principles."

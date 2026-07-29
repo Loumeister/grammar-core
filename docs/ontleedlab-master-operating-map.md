@@ -134,7 +134,7 @@ Includes:
 - shared parsing didactic canon
 - shared verb-spelling didactic canon
 - shared content governance
-- shared Claude agents and Codex skills
+- shared Claude agents and cross-agent skills
 - agent catalog
 - shared product-repo contract pattern
 - explicit rules for what must remain product-local
@@ -264,7 +264,7 @@ Exit criterion:
 
 ### In `grammar-core`
 1. relevant canonical docs in `docs/`
-2. relevant shared agent or skill files in `/.claude/agents/` and `/.codex/skills/`
+2. relevant shared agent or skill files in `/.claude/agents/` and `/.agents/skills/`
 3. this map for program-level orientation
 4. only then the task prompt
 

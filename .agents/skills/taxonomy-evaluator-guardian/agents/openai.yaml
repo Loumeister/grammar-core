@@ -1,0 +1,4 @@
+interface:
+  display_name: "Taxonomy Evaluator Guardian"
+  short_description: "Guard taxonomy and evaluator distinctions"
+  default_prompt: "Use $taxonomy-evaluator-guardian to evaluate whether this taxonomy or evaluator distinction belongs in shared canon."

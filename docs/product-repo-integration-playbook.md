@@ -183,7 +183,7 @@ Required reading
 
 Implement
 1. Update local Claude agent files so they explicitly read the relevant files under `shared/grammar-core/` first.
-2. Update local Codex skill files so they explicitly read the relevant files under `shared/grammar-core/` first.
+2. Update local skill files under `.agents/skills/` so they explicitly read the relevant files under `shared/grammar-core/` first.
 3. Keep local repo-specific rules that are genuinely product-specific.
 4. Remove or reduce duplicated canonical guidance when possible.
 5. If useful, add one short section in `AGENTS.md` stating that shared canonical guidance lives under `shared/grammar-core/`.
@@ -276,7 +276,7 @@ Required reading
 
 Implement
 1. Update local Claude agent files so they explicitly read the relevant files under `shared/grammar-core/` first.
-2. Update local Codex skill files so they explicitly read the relevant files under `shared/grammar-core/` first.
+2. Update local skill files under `.agents/skills/` so they explicitly read the relevant files under `shared/grammar-core/` first.
 3. Preserve Ontleedlab-specific rules for parsing UI, role labeling, and local progression.
 4. Remove duplicated canonical guidance where possible.
 

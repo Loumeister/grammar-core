@@ -1,31 +1,38 @@
+---
+name: parsing-content-governance
+description: Govern shared parsing didactics and parsing-oriented content while protecting product-local contracts. Use when creating or reviewing parsing content, bridge tasks, feedback principles, or canon-to-product mappings; do not use to canonize local annotations, JSON shapes, evaluators, renderers, or feedback flows.
+---
+
 # Parsing Content Governance
 
-Read first:
+## Read first
+
 - `docs/parsing-didactics-kaders.md`
 - `docs/content-authoring-rules.md`
-- `docs/product-repo-contract-template.md`
-- `docs/taxonomy-governance.md`
 - `docs/grammar-platform-principles.md`
-- `docs/repo-sync-strategy.md`
+- `docs/taxonomy-governance.md` when labels or misconceptions change
+- `docs/product-repo-contract-template.md` for cross-repo work
 
-Use when:
-- toevoegen of beoordelen van parsinggerichte shared content
-- beoordelen van product-repo alignment bij parsingwerk
-- ontwerpen van expliciete mappings van shared canon naar productlokale structuren
-- bewaken dat lokale productbeperkingen niet verdwijnen in schijnalgemeenheid
+When invoked through a product wrapper, read `shared/grammar-core/.agents/skills/parsing-content-governance/SKILL.md`, the local product contract, and local runtime truth before applying the task.
 
-Rules:
-- parsing-governance gaat niet alleen over labelcorrectheid, maar ook over diagnostische denkstappen, vraagvolgorde, didactische focus, zorgvuldig gekozen contrasten en beheersbare cognitieve belasting
-- houd canonieke parsingdidactiek in `docs/`; dupliceer geen hele kaders in deze skill
-- inspecteer het lokale productcontract voordat je productspecifieke content, evaluatielogica of adaptermappings wijzigt; eis geen onnodige volledige repo-inspectie voor triviale taken
-- behandel productspecifieke annotatievelden, RoleKeys, JSON-shapes, chunkconventies, evaluatielogica en feedbackflows nooit als gedeelde waarheid
-- laat productrepo’s shared canon expliciet adapteren; vervang lokale productlogica niet stilzwijgend door abstracte shared termen
-- wijzig runtimegedrag niet impliciet
-- wanneer deze skill via een productrepo-wrapper wordt gebruikt, lees dan eerst `shared/grammar-core/.codex/skills/parsing-content-governance/SKILL.md`, daarna het lokale productcontract en pas daarna de taakprompt
+## Procedure
 
-Output should state:
-1. welke parsingdidactische keuze of inhoudswijziging wordt voorgesteld
-2. welk gedeeld principe dit draagt
-3. welke lokale contractpunten gecontroleerd moeten worden
-4. wat shared canon blijft en wat lokaal moet blijven
-5. of runtimegedrag expliciet ongemoeid moet blijven
+1. Classify the work as shared canon, product-local logic, or an explicit adapter.
+2. Name the central parsing step, recovery question, contrast, and likely neighboring error.
+3. Test the proposal against one-main-pitfall, natural-Dutch, unambiguous-school-analysis, diagnostic-feedback, cognitive-load, and transfer criteria.
+4. Confirm that the didactic value survives without one product's data model or renderer.
+5. For product work, map shared concepts explicitly to existing local structures without replacing local behavior.
+6. Route canonical content creation through `shared-content-authoring` and taxonomy changes through `taxonomy-evaluator-guardian`.
+7. Validate the relevant content, schema, and product checks.
+
+## Guardrails
+
+- Preserve reasoning steps and question order; label correctness alone is insufficient.
+- Keep local RoleKeys, annotations, JSON shapes, chunk conventions, evaluators, feedback matrices, UI, and progression local.
+- Do not change runtime behavior implicitly.
+- Reject ambiguous analyses, competing new pitfalls, and bulk without new diagnostic value.
+- Escalate when the local contract is absent, stale, or conflicts with runtime truth.
+
+## Output contract
+
+Report the parsing decision, central reasoning step or contrast, supporting canonical principles, shared/local boundary, local contract points checked, validations run, and whether runtime behavior remained unchanged.

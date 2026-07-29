@@ -12,7 +12,7 @@ Provide one shared source of truth for:
 - grammar role label and misconception taxonomy governance
 - shared schemas
 - shared sentence/content seeds (not yet a full operational sentence layer)
-- canonical Claude agents and Codex skills
+- canonical Claude agents and cross-agent skills
 - product-repo governance boundaries
 
 ## Why this repo exists
@@ -37,14 +37,14 @@ The following are canonical in `grammar-core`:
 - `docs/repo-sync-strategy.md` — recommended sync model for product repos
 - `docs/product-repo-contract-template.md` — template for local product-repo contracts
 - `docs/portable-to-core-map.md` — migration decision map for promotions from product repos
-- `docs/agent-catalog.md` — catalog of canonical Claude agents and Codex skills
+- `docs/agent-catalog.md` — catalog of canonical Claude agents and cross-agent skills
 
 **Program map**
 - `docs/ontleedlab-master-operating-map.md` — cross-repo program map (governance architecture and workstreams; Ontleedlab-specific operational content has been moved to that repo's local documentation)
 
 **Tool-native instruction files**
 - `/.claude/agents/*` — canonical Claude agents
-- `/.codex/skills/*` — canonical Codex skills
+- `/.agents/skills/*` — canonical cross-agent skills and their Codex metadata
 
 **Schemas and content seeds**
 - `schemas/*` — shared structural schemas
@@ -69,7 +69,7 @@ The following belong in local product repos and must not be promoted here:
 - shared didactic canon for parsing and verb-spelling instruction
 - shared taxonomy governance (role labels and misconception codes)
 - shared product-repo contract template
-- canonical Claude agents and Codex skills
+- canonical Claude agents and cross-agent skills
 - first shared schemas
 - small shared sentence seed set
 
@@ -93,7 +93,7 @@ This is the preferred approach because Claude and Codex agents can only reliably
 
 Shared subtree sync should preserve the tool-native paths in this repo, especially:
 - `shared/grammar-core/.claude/agents/*`
-- `shared/grammar-core/.codex/skills/*`
+- `shared/grammar-core/.agents/skills/*`
 
 ## Installing canonical Claude skills in product repos
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shared Content Authoring"
+  short_description: "Author portable shared grammar content"
+  default_prompt: "Use $shared-content-authoring to create or review canonical shared grammar content with didactic discipline."

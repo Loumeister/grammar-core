@@ -14,7 +14,7 @@ Use this repo as the source of truth for:
 - shared schemas
 - shared sentence/content layers
 - canonical Claude agents
-- canonical Codex skills
+- canonical cross-agent skills
 - product-repo governance boundaries
 
 ## Canonical locations
@@ -24,7 +24,7 @@ Treat the following as canonical locations in this repo:
 - `schemas/*` for shared structural canon
 - `content/*` for shared taxonomy and shared sentence/content layers
 - `/.claude/agents/*` for canonical Claude-native agent instructions
-- `/.codex/skills/*` for canonical Codex-native skill instructions
+- `/.agents/skills/*` for canonical cross-agent skill instructions
 
 Read also:
 - `docs/agent-catalog.md`
@@ -100,7 +100,7 @@ Shared didactic guidance should preserve:
 Do not duplicate the full content of canonical docs inside agent files.
 
 Claude agent files under `/.claude/agents/` should stay concise, operational, and refer back to the canonical docs.
-Codex skills under `/.codex/skills/` follow the same rule.
+Skills under `/.agents/skills/` follow the same rule.
 
 ## Product-repo protection rule
 
