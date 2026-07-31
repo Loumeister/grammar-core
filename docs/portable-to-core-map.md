@@ -1,6 +1,21 @@
 # Portable to core map
 
-> Historical paths under `.codex/skills/` below identify the product-repo source artifacts assessed during the original promotion. Current canonical and product skill discovery uses `.agents/skills/`.
+> Historical paths under `.codex/skills/` below identify the product-repo source artifacts assessed during the original promotion. They remain historical evidence, not current canonical paths.
+
+## Current instruction-layer topology
+
+`grammar-core` owns exactly six canonical domain skills under `/.agents/skills/`:
+
+- `/.agents/skills/documentation-sync-guardian/`
+- `/.agents/skills/evidence-based-werkwoordspellingsdidactiek/`
+- `/.agents/skills/parsing-content-governance/`
+- `/.agents/skills/shared-content-authoring/`
+- `/.agents/skills/shared-content-integration/`
+- `/.agents/skills/taxonomy-evaluator-guardian/`
+
+Product repositories receive these canonical files through the subtree under `/shared/grammar-core/.agents/skills/`. Any product-local `/.agents/skills/` files remain thin wrappers: they read the corresponding subtree skill first and add only the local product contract and runtime constraints.
+
+Subtree synchronization is a separate operational capability. `grammar-core-sync` is distributed through the `grammar-core-toolkit` plugin from `/plugins/grammar-core-toolkit/skills/grammar-core-sync/`; it is neither a seventh canonical domain skill nor a product wrapper. The plugin drives the sync, while the subtree provides the physically visible canon.
 
 ## 0. Werkwoordlab feedback contract handoff (2026-04-10)
 
@@ -131,7 +146,7 @@ Een element hoort onder `Candidate for later validation` als het:
 | `.codex/skills/zinsontleding-repo-inspector/references/repo-contract.md` | **Lokale referentie met inhoudelijke drift** ten opzichte van de huidige labelinventaris | Archive, rewrite, or mark legacy | vaststelbaar | De templatevorm is bruikbaar, maar de huidige inhoud bevat aantoonbare veroudering. | Een stale repo-contract maakt inspectie- en authoringwerk onbetrouwbaar. | Lokale versie in Ontleedlab actualiseren nadat de gedeelde contracttemplate in `grammar-core` bestaat. |
 | `SPEC.md` | **Gemengde productspec + platformspec + verouderde architectuurclaims** | Archive, rewrite, or mark legacy | vaststelbaar | Dit document beschrijft deels een geïntegreerd platform binnen de Ontleedlab-repo, wat niet meer past bij de nieuwe shared-core architectuur. | Te lang laten staan als actieve waarheid houdt parallelle platformcanon in stand. | Later opsplitsen: gedeelde principes naar `grammar-core`, productspecifieke resten naar een lokale Ontleedlab-spec. |
 | `TODO.md` | **Gemengde productbacklog + platformambities** | Archive, rewrite, or mark legacy | waarschijnlijk | Het document bevat bruikbare producttaken, maar ook platformbrede didactische en modulaire ambities die niet meer primair in Ontleedlab thuishoren. | Zonder markering blijven toekomstige prompts brede platformontwikkeling in de verkeerde repo initiëren. | Markeer de platformdelen als legacy of verplaats ze later naar `grammar-core`-governance- of planningsdocumenten. |
-| `AGENTS.md` | **Lokale agentinstap zonder shared-core precedentie** | Archive, rewrite, or mark legacy | vaststelbaar | Voor migratiegovernance is dit relevant: de huidige instaplaag behandelt Ontleedlab nog als autonome bron en niet als productrepo met shared-core-first volgorde. | Zolang dit zo blijft, blijft shared governance in de praktijk zwakker dan de lokale repo-instructies. | Later herschrijven naar een lokale wrapper die expliciet eerst `shared/grammar-core/` leest. |
+| `AGENTS.md` | **Lokale agentinstap zonder shared-core precedentie** | Archive, rewrite, or mark legacy | vaststelbaar | Voor migratiegovernance is dit relevant: de huidige instaplaag behandelt Ontleedlab nog als autonome bron en niet als productrepo met shared-core-first volgorde. | Zolang dit zo blijft, blijft shared governance in de praktijk zwakker dan de lokale repo-instructies. | Later herschrijven naar een lokale wrapper die expliciet eerst `/shared/grammar-core/` leest. |
 
 ## 9. Do-not-canonize
 

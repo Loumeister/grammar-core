@@ -9,8 +9,8 @@
 For every task:
 
 1. Read this file.
-2. Read only the relevant canonical documents in `docs/`.
-3. Read the exactly matching skill in `.agents/skills/`.
+2. Read only the relevant canonical documents in `/docs/`.
+3. Read the exactly matching skill in `/.agents/skills/`.
 4. Inspect current files, schemas, content, and tests as runtime truth.
 5. Apply the task prompt.
 
@@ -20,7 +20,7 @@ Runtime truth outranks documentation. Correct stale documentation in the same ch
 
 Promote only portable principles, governance, schemas, content, or type contracts. Keep product-local UI, evaluator behavior, progression, labels, JSON shapes, annotations, feedback flows, dashboards, and route logic in the product repository.
 
-When work touches a product repository, read `shared/grammar-core/` first, its local product contract second, and local runtime truth third.
+When work touches a product repository, read `/shared/grammar-core/` first, its local product contract second, and local runtime truth third.
 
 ## Skills
 
@@ -40,7 +40,10 @@ General engineering process comes from the globally installed Matt Pocock skills
 - Anchor non-trivial work to an issue or numbered plan step, and state its scope.
 - Before editing, select the applicable global Matt process skill and local domain skill.
 - Decide the test and validation evidence before implementation.
-- Review the exact Git range before claiming completion.
+- Resolve the repository root with `git rev-parse --show-toplevel`; write repository-owned paths in prose and reports as root-relative paths beginning with `/`. Omit that leading slash where Git requires a repository-relative pathspec or prefix argument.
+- Before a sync branch is created, fetch the selected remote and verify that `HEAD` exactly equals the fetched `<remote>/<default-branch>` commit. A merely clean or apparently current branch is insufficient.
+- During a conflict, inspect both `git ls-files --unmerged` and `git diff --cached`; complete the merge before using any `<sync-base>..HEAD` range as evidence.
+- Review the exact, non-empty Git range before claiming completion. An empty range is not scope evidence and must be investigated or reported as a no-op.
 - Report commands, results, and failures honestly.
 - Do not claim work is done until applicable checks and required review pass.
 

@@ -9,9 +9,11 @@ Canonical repository: `https://github.com/Loumeister/grammar-core.git`
 
 Required subtree prefix: `shared/grammar-core`
 
+Repository paths in prose begin with `/`; Git pathspecs and `--prefix` values omit that leading slash.
+
 ## 1. Preflight
 
-1. Read the product repository's `AGENTS.md`, `docs/product-contract.md` or equivalent local contract, and validation instructions.
+1. Read the product repository's `/AGENTS.md`, `/docs/product-contract.md` or equivalent local contract, and validation instructions.
 2. Confirm repository root, current branch, remotes, subtree presence, and worktree state:
 
    ```sh
@@ -36,16 +38,20 @@ Required subtree prefix: `shared/grammar-core`
    git ls-remote --symref https://github.com/Loumeister/grammar-core.git HEAD
    ```
 
-6. Fetch the product remote. Switch to its default branch, fast-forward only, then create a dedicated sync branch with a collision-free name:
+6. Fetch the product remote. Switch to its default branch, fast-forward it to the fetched remote-tracking ref, and prove that `HEAD` is exactly that fetched commit before creating a dedicated sync branch:
 
    ```sh
    git fetch <product-remote> --prune
    git switch <product-default-branch>
-   git pull --ff-only <product-remote> <product-default-branch>
+   git merge --ff-only <product-remote>/<product-default-branch>
+   git rev-parse HEAD
+   git rev-parse <product-remote>/<product-default-branch>
    git switch -c <sync-branch>
    ```
 
-7. Record the pre-sync commit as `<sync-base>` with `git rev-parse HEAD`.
+   The two `rev-parse` results must be identical. Stop if they differ; do not branch from an unverified local default branch.
+
+7. Record the pre-sync commit as `<sync-base>` with `git rev-parse HEAD` after creating the sync branch.
 
 Stop and ask for direction when the remote, default branch, prefix history, or clean baseline cannot be established.
 
@@ -69,8 +75,10 @@ Do not modify files outside the prefix while the pull or merge is unresolved.
 
    ```sh
    git status --short
+   git ls-files --unmerged
    git diff --name-only --diff-filter=U
    git diff --cc -- <conflicted-file>
+   git diff --cached
    ```
 
 2. Resolve each file from its actual intent. Canonical files normally follow upstream, but preserve product-local behavior outside the subtree through local wrappers, adapters, or contracts.
@@ -79,11 +87,12 @@ Do not modify files outside the prefix while the pull or merge is unresolved.
    - upstream the portable improvement to `grammar-core` first;
    - move product-specific behavior into a local wrapper or contract; or
    - abort with `git merge --abort`.
-5. After resolving each file, stage only that reviewed file. Confirm no unresolved entries remain before continuing.
+5. After resolving each file, stage only that reviewed file. Re-run `git ls-files --unmerged` and review `git diff --cached` after every staged resolution.
+6. When `git ls-files --unmerged` is empty, review the complete staged resolution, run `git diff --cached --check`, and complete the existing subtree merge with `git commit --no-edit`. Do not add unrelated changes to that merge commit.
 
 ## 4. Verify sync scope
 
-Before changing local references, compare the sync result with `<sync-base>`:
+Before changing local references, confirm that the subtree merge is complete. `git rev-parse -q --verify MERGE_HEAD` must produce no SHA, and `git status --short` must show no unresolved entries. Only then compare the committed sync result with `<sync-base>`:
 
 ```sh
 git diff --name-status <sync-base>..HEAD
@@ -91,13 +100,13 @@ git diff --stat <sync-base>..HEAD
 git diff --check <sync-base>..HEAD
 ```
 
-At this point, committed sync changes must be limited to `shared/grammar-core/`. Stop and investigate any other path.
+The range must contain at least one committed path. Empty output from `git diff --name-status <sync-base>..HEAD` is not scope evidence: stop and report a no-op or investigate an unfinished merge. At this point, committed sync changes must be limited to `/shared/grammar-core/`. Stop and investigate any other path.
 
 Review the canonical changes that may affect the product:
 
 - shared/local scope contracts;
 - adopted schemas and taxonomy;
-- wrapper paths under `.agents/skills`;
+- wrapper paths under `/.agents/skills/`;
 - renamed or removed canonical files;
 - product adapters and documented adoption boundaries.
 
@@ -105,7 +114,7 @@ Review the canonical changes that may affect the product:
 
 Only after the subtree scope is clean:
 
-1. Update product-local wrappers, `AGENTS.md`, contracts, README references, or recorded sync metadata made stale by the canonical change.
+1. Update product-local wrappers, `/AGENTS.md`, contracts, README references, or recorded sync metadata made stale by the canonical change.
 2. Keep these local edits separate and reviewable; do not rewrite canonical subtree content.
 3. Search for stale canonical paths or removed skill names.
 4. Re-run `git diff --check`.
@@ -127,7 +136,7 @@ Record pre-existing failures separately. Treat new failures as sync incompatibil
 Before any push, report:
 
 - product and canonical branches used;
-- `<sync-base>` and pulled canonical revision;
+- `<sync-base>`, the non-empty committed sync range, and pulled canonical revision;
 - subtree paths changed;
 - local wrapper or reference changes;
 - conflicts and their per-file resolutions;
@@ -140,7 +149,7 @@ Commit only intentional local follow-up changes. Push and create a draft pull re
 
 For a portable improvement discovered in a product repository:
 
-1. leave `shared/grammar-core/` unchanged;
+1. leave `/shared/grammar-core/` unchanged;
 2. create and merge a focused change in `grammar-core`;
 3. run this sync procedure after merge;
 4. adapt the new canon locally through explicit product code or contracts.

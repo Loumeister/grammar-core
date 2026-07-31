@@ -29,27 +29,27 @@ A shared core repo is needed because:
 The following are canonical in `grammar-core`:
 
 **Governance and didactics**
-- `docs/werkwoordspellingsdidactiek-kaders.md` — shared verb-spelling didactic canon
-- `docs/parsing-didactics-kaders.md` — shared parsing didactic canon
-- `docs/grammar-platform-principles.md` — shared platform principles, distinguishing current reality from future direction
-- `docs/taxonomy-governance.md` — grammar role label and misconception code governance
-- `docs/content-authoring-rules.md` — shared content authoring rules
-- `docs/repo-sync-strategy.md` — recommended sync model for product repos
-- `docs/product-repo-contract-template.md` — template for local product-repo contracts
-- `docs/portable-to-core-map.md` — migration decision map for promotions from product repos
-- `docs/agent-catalog.md` — catalog of canonical Claude agents and cross-agent skills
+- `/docs/werkwoordspellingsdidactiek-kaders.md` — shared verb-spelling didactic canon
+- `/docs/parsing-didactics-kaders.md` — shared parsing didactic canon
+- `/docs/grammar-platform-principles.md` — shared platform principles, distinguishing current reality from future direction
+- `/docs/taxonomy-governance.md` — grammar role label and misconception code governance
+- `/docs/content-authoring-rules.md` — shared content authoring rules
+- `/docs/repo-sync-strategy.md` — recommended sync model for product repos
+- `/docs/product-repo-contract-template.md` — template for local product-repo contracts
+- `/docs/portable-to-core-map.md` — migration decision map for promotions from product repos
+- `/docs/agent-catalog.md` — catalog of canonical Claude agents and cross-agent skills
 
 **Program map**
-- `docs/ontleedlab-master-operating-map.md` — cross-repo program map (governance architecture and workstreams; Ontleedlab-specific operational content has been moved to that repo's local documentation)
+- `/docs/ontleedlab-master-operating-map.md` — cross-repo program map (governance architecture and workstreams; Ontleedlab-specific operational content has been moved to that repo's local documentation)
 
 **Tool-native instruction files**
 - `/.claude/agents/*` — canonical Claude agents
 - `/.agents/skills/*` — canonical cross-agent skills and their Codex metadata
 
 **Schemas and content seeds**
-- `schemas/*` — shared structural schemas
-- `content/shared-sentences/*` — first shared sentence seeds (not yet a full operational sentence bank)
-- `content/taxonomy/*` — canonical taxonomy content, including misconception definitions and codes
+- `/schemas/*` — shared structural schemas
+- `/content/shared-sentences/*` — first shared sentence seeds (not yet a full operational sentence bank)
+- `/content/taxonomy/*` — canonical taxonomy content, including misconception definitions and codes
 
 ## What is intentionally not canonical here
 
@@ -86,14 +86,14 @@ Do not treat aspirational items as current operational reality.
 Product repos should include this repo locally, preferably via **git subtree**, for example under:
 
 ```text
-shared/grammar-core/
+/shared/grammar-core/
 ```
 
 This is the preferred approach because Claude and Codex agents can only reliably use files that are physically present in the current repo context.
 
 Shared subtree sync should preserve the tool-native paths in this repo, especially:
-- `shared/grammar-core/.claude/agents/*`
-- `shared/grammar-core/.agents/skills/*`
+- `/shared/grammar-core/.claude/agents/*`
+- `/shared/grammar-core/.agents/skills/*`
 
 ## Installing canonical Claude skills in product repos
 
@@ -106,15 +106,15 @@ can install canonical Claude skills directly, without wrapper files. In a produc
 ```
 
 After installing, the sync skill is available as `/grammar-core-toolkit:grammar-core-sync`.
-Use it to sync `shared/grammar-core/` with canon and to route local canon-improvements upstream first.
+Use it to sync `/shared/grammar-core/` with canon and to route local canon-improvements upstream first.
 To pick up new plugin versions, run `/plugin marketplace update grammar-core` and then re-run `/plugin install grammar-core-toolkit@grammar-core`.
 
 ## Local wrapper rule
 
-Product repos may keep local agent files, but those must be wrappers.
+Product repos may keep local `/.claude/agents/*` and `/.agents/skills/*` files, but those must be wrappers.
 
 Their reading order must be:
-1. `shared/grammar-core/`
+1. `/shared/grammar-core/`
 2. local repo contracts
 3. task prompt
 
@@ -126,4 +126,4 @@ Shared didactic and governance principles are not automatically binding for prod
 
 ## Agent rule
 
-No proposal may be called evidence-based unless it is explicitly justified by one or more named principles from the didactic framework in `docs/`.
+No proposal may be called evidence-based unless it is explicitly justified by one or more named principles from the didactic framework in `/docs/`.
