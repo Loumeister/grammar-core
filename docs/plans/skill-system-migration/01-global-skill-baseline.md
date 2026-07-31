@@ -7,7 +7,7 @@ De globale Codex-installatie bevat één algemene engineeringmethodologie, twee 
 ## Start in een verse context
 
 - Model: `gpt-5.6-terra`, reasoning `medium`.
-- Systeem: globale Codex skills en plugins onder `C:\Users\cpfva\.codex`.
+- Systeem: resolve `<global-codex-root>` via de werkelijke Codex-configuratie; neem geen gebruikersnaam, driveletter of vaste map aan.
 - Lees eerst dit bestand en inventariseer daarna de werkelijke globale installatie.
 
 ## Afhankelijkheden
@@ -21,9 +21,10 @@ Geen repo-implementatie. Rond deze stap af voordat repo-skills worden opgeschoon
 3. Installeer brongetraceerd en globaal:
    - `frontend-design` uit `anthropics/skills`;
    - `web-design-guidelines` uit `vercel-labs/agent-skills`.
-4. Verwijder Superpowers met de pluginbeheerfunctie en verwijder de ongebruikte marketplace-registratie pas nadat de plugin exact is geïdentificeerd.
-5. Verwijder globale PlanetScale-skills en verouderde/projectvreemde skills alleen uit de geïnventariseerde skillroot.
-6. Start een nieuwe Codex-sessie en controleer discovery opnieuw.
+4. Start een nieuwe Codex-sessie en bewijs vóór verwijdering dat beide vervangende designskills en de behouden Matt-processkills vindbaar zijn. Bewaar de discovery-output en de twee positieve routingresultaten.
+5. Verwijder Superpowers pas nadat stap 4 slaagt. Gebruik de pluginbeheerfunctie en verwijder de ongebruikte marketplace-registratie pas nadat de plugin exact is geïdentificeerd.
+6. Verwijder globale PlanetScale-skills en verouderde/projectvreemde skills alleen uit de geïnventariseerde `<global-codex-root>`.
+7. Start opnieuw een verse Codex-sessie en controleer de finale discovery en negatieve routing.
 
 ## Niet wijzigen
 
@@ -48,7 +49,7 @@ Geen repo-implementatie. Rond deze stap af voordat repo-skills worden opgeschoon
 
 ## Voltooiingscriteria
 
-Alle behouden globale skills hebben een herleidbare bron, beide designskills zijn vindbaar in een verse sessie en verwijderde methodologieën routeren niet meer.
+Alle behouden globale skills hebben een herleidbare bron, beide designskills waren aantoonbaar vindbaar voordat Superpowers werd verwijderd, ze blijven vindbaar in de finale verse sessie en verwijderde methodologieën routeren niet meer.
 
 ## Rollback
 

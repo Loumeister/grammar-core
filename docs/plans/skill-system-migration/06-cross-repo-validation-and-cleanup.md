@@ -9,24 +9,31 @@ De globale baseline en alle vier repos vormen één coherent skillsysteem zonder
 - Terra `medium` voor mechanische inventarisatie en opgeschoonde verwijzingen.
 - Sol `xhigh` voor afwijkende skillcorrecties en routingbeoordeling.
 - Lees dit dossier, de vier PR-diffs, globale voor/na-inventaris en per-repo `AGENTS.md`.
+- Paden: resolve `<workspace-root>` en voor iedere controle het actuele `<repo-root>`; neem geen vaste gebruikers- of checkoutlocatie aan.
 
 ## Afhankelijkheden
 
-Stappen 01–05 zijn uitgevoerd; grammar-core is vóór de productrepo-syncs gemerged. Gebruik per repo een schone worktree en de exacte implementatiebranch.
+Stappen 01–05 zijn uitgevoerd. De `grammar-core`-implementatie-PR is eerst gemerged; daarna zijn de afzonderlijke sync-only PR’s in `werkwoordlab` en `ontledingstrainer` gemerged; pas daarna zijn de productmigratiebranches gemaakt en hun implementatie-PR’s gereedgemaakt. Gebruik per repo een schone worktree en de exacte implementatiebranch en leg de drie SHA-grenzen afzonderlijk vast.
+
+## Terra → Sol-overdracht
+
+Terra voert alleen inventarisatie, mechanische referentiecleanup en deterministische validators uit. Terra levert vóór de modelwissel per repo basis-SHA, `git status --short --branch`, grammar-core-merge-SHA, eventuele product-sync-merge-SHA, productmigratiebranch/SHA, finale skillinventaris, mechanische diff, validatoroutput en bewaarde gebruikerswijzigingen.
+
+Sol begint pas met routingbeoordeling of een inhoudelijke skillcorrectie wanneer deze bewijsbundel compleet is. Sol controleert eerst dat grammar-core-implementatie, productsync en productmigratie afzonderlijke grenzen hebben en dat Terra geen skillbetekenis heeft gewijzigd. Sol documenteert afwijking, bronbewijs en correctiediff per skill; bij een onduidelijke mechanische wijziging gaat het specifieke bestand of hunk terug naar Terra in plaats van de fasen te vermengen.
 
 ## Procedure
 
-1. Leg voor global, `grammar-core`, `werkwoordlab`, `ontledingstrainer` en `dealership` de finale skillinventaris vast.
-2. Controleer directorynaam, frontmatternaam, beschrijving, `agents/openai.yaml`, default prompt en discovery.
-3. Zoek repo-breed naar oude `.codex/skills`, verwijderde skillnamen, Superpowers en PlanetScale. Accepteer alleen expliciet gemarkeerde historische bronverwijzingen.
-4. Test per skill minimaal één positieve en één negatieve routingprompt in een verse context.
-5. Test combinaties:
+1. Terra legt voor global, `grammar-core`, `werkwoordlab`, `ontledingstrainer` en `dealership` de finale skillinventaris en de vereiste SHA-grenzen vast.
+2. Terra controleert directorynaam, frontmatternaam, beschrijving, `agents/openai.yaml`, default prompt en discovery.
+3. Terra zoekt vanaf iedere expliciete `<repo-root>` naar oude `.codex/skills`, verwijderde skillnamen, Superpowers en PlanetScale. Accepteer alleen expliciet gemarkeerde historische bronverwijzingen.
+4. Terra draait per repo alle in de implementatiestap genoemde productchecks en `git diff --check`, levert de bewijsbundel en stopt.
+5. Sol test per skill minimaal één positieve en één negatieve routingprompt in een verse context.
+6. Sol test combinaties:
    - één Matt-processkill + één domeinskill;
    - `frontend-design` + lokale learner-flow-skill;
    - `web-design-guidelines` als afsluitende audit;
    - Dealership UI zonder lokale `ui-designer`.
-6. Controleer dat design- en auditskills geen eigen TDD-, Git- of projectmanagementproces starten.
-7. Draai per repo alle in de implementatiestap genoemde productchecks en `git diff --check`.
+7. Sol controleert dat design- en auditskills geen eigen TDD-, Git- of projectmanagementproces starten en beoordeelt de volledige inhoudelijke diff na het Terra-werk.
 8. Maak alleen gerichte correctie-PR’s; combineer geen ongerelateerde cleanup.
 
 ## Niet wijzigen
@@ -47,8 +54,9 @@ Stappen 01–05 zijn uitgevoerd; grammar-core is vóór de productrepo-syncs gem
 Per repo:
 
 ```powershell
+Set-Location '<repo-root>'
 npx skills list --json
-rg -n --hidden --glob '!.git/**' '\.codex/skills|superpowers|planetscale'
+rg -n --hidden --glob '!.git/**' '\.codex/skills|superpowers|planetscale' -- .
 git diff --check
 git status --short --branch
 ```

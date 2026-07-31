@@ -2,17 +2,26 @@
 
 ## Eindtoestand
 
-`C:\Users\cpfva\Code\ontledingstrainer` bevat een compacte parsinggerichte skillset onder `.agents/skills/` en gebruikt globale skills voor algemene engineering en UI-audit.
+`<workspace-root>/ontledingstrainer` bevat een compacte parsinggerichte skillset onder `.agents/skills/` en gebruikt globale skills voor algemene engineering en UI-audit.
 
 ## Start in een verse context
 
 - Terra `medium` voor inventarisatie, consolidatieverplaatsingen en verwijderen.
 - Sol `xhigh` voor skillontwerp, consolidatie-inhoud en routingtests.
 - Lees: repo-instructies, relevante `shared/grammar-core/docs/`, lokaal productcontract, runtimewaarheid, bestaande skills, dit bestand.
+- Paden: resolve `<workspace-root>` als de map met repo-checkouts en `<repo-root>` als de afzonderlijke `ontledingstrainer`-checkout; neem geen vaste lokale checkoutlocatie aan.
 
 ## Afhankelijkheden
 
-Stap 01 is valide en stap 02 is gemerged. Synchroniseer eerst de gemergede canon.
+Stap 01 is valide en de `grammar-core`-implementatie-PR uit stap 02 is gemerged. Synchroniseer die merge eerst in een afzonderlijke sync-only branch en PR en merge die PR vóór deze migratiestap.
+
+Laat de eerste sync niet afhangen van een nog niet vindbare plugin-skill. Als `grammar-core-sync` nog niet geïnstalleerd of discoverable is, lees `<workspace-root>/grammar-core/plugins/grammar-core-toolkit/skills/grammar-core-sync/SKILL.md` rechtstreeks uit de gemergede canonieke checkout en gebruik dat bestand als runbook: verifieer schone worktree, remotes en default branches; maak een sync-only branch; voer `git subtree pull --prefix=shared/grammar-core <canonical-remote> <canonical-default-branch> --squash` uit; controleer dat de diff vóór lokale referentie-updates alleen `shared/grammar-core/` raakt; draai productchecks; merge de sync-only PR. Maak daarna vanaf de productbasisbranch mét die sync-merge een nieuwe migratiebranch. Wrapper- en skillmigratie-edits horen nooit in de sync-only PR.
+
+## Terra → Sol-overdracht
+
+Terra voert alleen inventarisatie, consolidatieverplaatsingen, verwijderingen en mechanische referentiecorrecties uit. Terra levert vóór de modelwissel basis-SHA, `git status --short --branch`, bewijs van de gemergede sync-PR en grammar-core-SHA, voor/na-skillinventaris, consolidatie- en padmapping, `git diff --name-status`, de volledige mechanische diff en bewaarde gebruikerswijzigingen.
+
+Sol begint pas met consolidatie-inhoud, wrappergedrag, triggers en routingtests nadat deze bundel compleet is en de diff uitsluitend de afgesproken mechanische scope raakt. Bij ontbrekend syncbewijs of een onverklaarde inhoudelijke wijziging stopt Sol en draagt het specifieke bestand of hunk terug over; Sol mengt de sync-, Terra- en Sol-fasen niet stilzwijgend.
 
 ## Doelset
 
@@ -29,14 +38,14 @@ Stap 01 is valide en stap 02 is gemerged. Synchroniseer eerst de gemergede canon
 
 ## Procedure
 
-1. Inventariseer skills, wrappers, referenties en lokale runtimecontracten.
-2. Consolideer `content-curator` in `zinsontleding-content-quality-gate`.
-3. Consolideer `grammar-coach` in `zinsontleding-feedback-didactiek`.
-4. Breng productspecifieke toegankelijkheidsverplichtingen onder in `ontleedlab-learner-flow-ui`.
-5. Maak shared wrappers dun en laat ze eerst de corresponderende `.agents/skills` in de subtree lezen.
-6. Verwijder `frontend-developer`, `technical-writer`, `test-engineer` en `whimsy-injector`.
-7. Voeg/actualiseer frontmatter en `agents/openai.yaml`; verwijder algemene TDD-, Git-, review- en planningsinstructies.
-8. Werk repo-instructies, context, agentsdocs, catalogi en paden bij.
+1. Terra verifieert dat de actuele migratiebranch afstamt van de gemergede sync-only PR en inventariseert skills, wrappers, referenties en lokale runtimecontracten.
+2. Terra verplaatst de bestanden voor `content-curator` naar `zinsontleding-content-quality-gate` en die voor `grammar-coach` naar `zinsontleding-feedback-didactiek`, zonder de inhoud al te herschrijven.
+3. Terra verwijdert `frontend-developer`, `technical-writer`, `test-engineer` en `whimsy-injector` en werkt mechanische paden in repo-instructies, context, `docs/agents/` en catalogi bij.
+4. Terra levert de bewijsbundel uit de overdrachtssectie en stopt.
+5. Sol consolideert de inhoud van `content-curator` in `zinsontleding-content-quality-gate` en van `grammar-coach` in `zinsontleding-feedback-didactiek`.
+6. Sol brengt productspecifieke toegankelijkheidsverplichtingen onder in `ontleedlab-learner-flow-ui` en maakt shared wrappers dun door eerst de corresponderende `.agents/skills` in de subtree te lezen.
+7. Sol voegt frontmatter en `agents/openai.yaml` toe of actualiseert ze en verwijdert algemene TDD-, Git-, review- en planningsinstructies uit de doelskills.
+8. Sol voert de routingtests uit en controleert de volledige inhoudelijke diff na het Terra-werk.
 
 ## UI-routing
 
@@ -51,7 +60,7 @@ Gebruik globale `frontend-design` samen met `ontleedlab-learner-flow-ui` voor le
 
 - `npx skills list --json`
 - Frontmatter/openai.yaml- en directorynaamvalidatie.
-- `rg` op `.codex/skills`, verwijderde generieke skills, Superpowers en PlanetScale.
+- Vanuit `<repo-root>`: `rg -n --hidden --glob '!.git/**' '\.codex/skills|frontend-developer|technical-writer|test-engineer|whimsy-injector|superpowers|planetscale' -- .`.
 - Positieve en negatieve routing, inclusief combinatietest voor een leerlingflow.
 - Bestaande content-, unit-, integratie- en e2e-checks.
 - `git diff --check`
@@ -66,4 +75,4 @@ Revert de product-PR. Herstel een geconsolideerde skill alleen als de nieuwe doe
 
 ## Overdracht
 
-Noteer grammar-core-SHA, syncbewijs, consolidatiemapping, routingtests en validaties voor stap 06.
+Noteer grammar-core-SHA, de gemergede sync-PR en sync-merge-SHA, de afzonderlijke productmigratiebranch, syncbewijs, consolidatiemapping, routingtests en validaties voor stap 06.
