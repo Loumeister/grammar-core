@@ -22,7 +22,7 @@ The following are present and operational in `grammar-core` today:
 - Shared product-repo contract template (`docs/product-repo-contract-template.md`)
 - Shared repo sync strategy (`docs/repo-sync-strategy.md`)
 - Canonical Claude agents under `/.claude/agents/`
-- Canonical Codex skills under `/.codex/skills/`
+- Canonical cross-agent skills under `/.agents/skills/`
 - First shared schemas under `schemas/`
 - A small shared sentence seed set under `content/shared-sentences/` (not yet a full operational sentence bank)
 

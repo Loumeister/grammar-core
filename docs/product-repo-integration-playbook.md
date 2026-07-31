@@ -12,6 +12,8 @@ Dit document bevat:
 2. concrete beslismomenten
 3. uitvoerbare markdown prompts voor Codex per fase
 
+Padnotatie: een voorloopslash betekent de root van de actuele productrepo; het is geen absoluut bestandssysteempad.
+
 ---
 
 # Uitgangspunten
@@ -67,7 +69,7 @@ Maak `grammar-core` **fysiek zichtbaar** in Werkwoordlab, zodat Claude/Codex daa
 Gebruik bij voorkeur **git subtree** en plaats de gedeelde kern onder:
 
 ```text
-shared/grammar-core/
+/shared/grammar-core/
 ```
 
 ## Waarom eerst Werkwoordlab?
@@ -81,7 +83,7 @@ shared/grammar-core/
 - nog geen evaluatorwijzigingen
 
 ## Definition of done
-- `shared/grammar-core/` bestaat in Werkwoordlab
+- `/shared/grammar-core/` bestaat in Werkwoordlab
 - de bestanden zijn lokaal zichtbaar
 - bestaande appflow werkt nog gewoon
 
@@ -94,7 +96,7 @@ Prepare Werkwoordlab to consume the shared canonical repo `grammar-core` without
 
 Goal
 Introduce a local visible shared-core location in this repo so Claude/Codex agents and future integration work can read canonical docs, agents, schemas, and shared content from:
-- `shared/grammar-core/`
+- `/shared/grammar-core/`
 
 Important
 Do NOT redesign the app.
@@ -106,13 +108,13 @@ This run is about safe structural preparation only.
 Required reading
 - `AGENTS.md`
 - local docs currently used by Werkwoordlab
-- all relevant files under `shared/grammar-core/` if already present
+- all relevant files under `/shared/grammar-core/` if already present
 
 Implement
 1. Ensure this repo has a dedicated visible location for the shared core:
-   - `shared/grammar-core/`
+   - `/shared/grammar-core/`
 2. If the subtree content is already present, do not duplicate it.
-3. Add a short local integration note if needed, explaining that `shared/grammar-core/` is the canonical shared source.
+3. Add a short local integration note if needed, explaining that `/shared/grammar-core/` is the canonical shared source.
 4. Do not break any existing routes, tests, or content loading.
 
 Constraints
@@ -122,7 +124,7 @@ Constraints
 - no fake placeholder integration
 
 Done when
-- `shared/grammar-core/` is present and readable
+- `/shared/grammar-core/` is present and readable
 - local product behavior is unchanged
 - the repo is ready for wrapper updates in a later step
 
@@ -140,18 +142,19 @@ Laat de lokale agents eerst de gedeelde kern lezen, en pas daarna lokale repo-re
 
 ## Kernprincipe
 De hiërarchie wordt:
-1. `shared/grammar-core/`
+1. `/shared/grammar-core/`
 2. lokale repo-contracten
 3. taakprompt
 
 ## Te wijzigen soorten bestanden
-- `.claude/agents/*`
-- `.agents/skills/*`
+- `/.claude/agents/*`
+- `/.agents/skills/*`
 - eventueel `AGENTS.md` waar nodig
 
 ## Wat de wrappers moeten doen
-- expliciet verwijzen naar `shared/grammar-core/docs/...`
-- expliciet verwijzen naar `shared/grammar-core/agents/...`
+- expliciet verwijzen naar `/shared/grammar-core/docs/...`
+- expliciet verwijzen naar `/shared/grammar-core/.claude/agents/*`
+- expliciet verwijzen naar `/shared/grammar-core/.agents/skills/*`
 - duidelijk maken wat canoniek gedeeld is en wat lokaal productspecifiek blijft
 
 ## Wat je nog niet doet
@@ -169,24 +172,25 @@ De hiërarchie wordt:
 You are working in the GitHub repository Loumeister/werkwoordlab.
 
 Task
-Update the local Claude and Codex instruction layer so it treats `shared/grammar-core/` as the first canonical shared source.
+Update the local Claude and Codex instruction layer so it treats `/shared/grammar-core/` as the first canonical shared source.
 
 Goal
 Make local wrappers read the shared core first, then apply Werkwoordlab-specific constraints.
 
 Required reading
 - `AGENTS.md`
-- local `.claude/agents/*`
-- local `.agents/skills/*`
-- `shared/grammar-core/docs/*`
-- `shared/grammar-core/agents/*`
+- local `/.claude/agents/*`
+- local `/.agents/skills/*`
+- `/shared/grammar-core/docs/*`
+- `/shared/grammar-core/.claude/agents/*`
+- `/shared/grammar-core/.agents/skills/*`
 
 Implement
-1. Update local Claude agent files so they explicitly read the relevant files under `shared/grammar-core/` first.
-2. Update local Codex skill files so they explicitly read the relevant files under `shared/grammar-core/` first.
+1. Update local Claude agent files under `/.claude/agents/*` so they explicitly read the relevant files under `/shared/grammar-core/.claude/agents/*` first.
+2. Update local skill files under `/.agents/skills/*` so they explicitly read the relevant files under `/shared/grammar-core/.agents/skills/*` first.
 3. Keep local repo-specific rules that are genuinely product-specific.
 4. Remove or reduce duplicated canonical guidance when possible.
-5. If useful, add one short section in `AGENTS.md` stating that shared canonical guidance lives under `shared/grammar-core/`.
+5. If useful, add one short section in `AGENTS.md` stating that shared canonical guidance lives under `/shared/grammar-core/`.
 
 Constraints
 - do not change runtime app behavior
@@ -195,7 +199,7 @@ Constraints
 - preserve useful local constraints
 
 Done when
-- local Claude/Codex wrappers point to `shared/grammar-core/`
+- local Claude/Codex wrappers point to `/shared/grammar-core/`
 - shared canonical guidance is clearly first in precedence
 - local instructions remain useful and product-specific
 
@@ -221,7 +225,7 @@ Daarom geldt hier nog sterker:
 - eerst zichtbaarheid en governance
 
 ## Definition of done
-- `shared/grammar-core/` lokaal zichtbaar in Ontleedlab
+- `/shared/grammar-core/` lokaal zichtbaar in Ontleedlab
 - lokale wrappers lezen eerst gedeelde kern
 - huidige Ontleedlab-functionaliteit blijft intact
 
@@ -234,7 +238,7 @@ Prepare Ontleedlab / ontledingstrainer to consume the shared canonical repo `gra
 
 Goal
 Introduce a local visible shared-core location in this repo so Claude/Codex agents and future integration work can read canonical docs, agents, schemas, and shared content from:
-- `shared/grammar-core/`
+- `/shared/grammar-core/`
 
 Important
 Do NOT redesign the app.
@@ -244,13 +248,13 @@ This run is about safe structural preparation only.
 
 Implement
 1. Ensure this repo has a dedicated visible location for the shared core:
-   - `shared/grammar-core/`
+   - `/shared/grammar-core/`
 2. If the subtree content is already present, do not duplicate it.
-3. Add a short local integration note if needed, explaining that `shared/grammar-core/` is the canonical shared source.
+3. Add a short local integration note if needed, explaining that `/shared/grammar-core/` is the canonical shared source.
 4. Keep current app behavior intact.
 
 Done when
-- `shared/grammar-core/` is present and readable
+- `/shared/grammar-core/` is present and readable
 - local product behavior is unchanged
 
 Return
@@ -263,7 +267,7 @@ Return
 You are working in the GitHub repository Loumeister/ontledingstrainer.
 
 Task
-Update the local Claude and Codex instruction layer so it treats `shared/grammar-core/` as the first canonical shared source.
+Update the local Claude and Codex instruction layer so it treats `/shared/grammar-core/` as the first canonical shared source.
 
 Goal
 Make local wrappers read the shared core first, then apply Ontleedlab-specific constraints.
@@ -271,12 +275,13 @@ Make local wrappers read the shared core first, then apply Ontleedlab-specific c
 Required reading
 - local agent and skill files
 - local repo contract files
-- `shared/grammar-core/docs/*`
-- `shared/grammar-core/agents/*`
+- `/shared/grammar-core/docs/*`
+- `/shared/grammar-core/.claude/agents/*`
+- `/shared/grammar-core/.agents/skills/*`
 
 Implement
-1. Update local Claude agent files so they explicitly read the relevant files under `shared/grammar-core/` first.
-2. Update local Codex skill files so they explicitly read the relevant files under `shared/grammar-core/` first.
+1. Update local Claude agent files under `/.claude/agents/*` so they explicitly read the relevant files under `/shared/grammar-core/.claude/agents/*` first.
+2. Update local skill files under `/.agents/skills/*` so they explicitly read the relevant files under `/shared/grammar-core/.agents/skills/*` first.
 3. Preserve Ontleedlab-specific rules for parsing UI, role labeling, and local progression.
 4. Remove duplicated canonical guidance where possible.
 
@@ -286,7 +291,7 @@ Constraints
 - keep Ontleedlab usable as it currently is
 
 Done when
-- local wrappers now prioritize `shared/grammar-core/`
+- local wrappers now prioritize `/shared/grammar-core/`
 - Ontleedlab-specific guidance remains local
 - no runtime behavior changed
 
@@ -332,15 +337,15 @@ Map daaruit enkele zinnen expliciet naar Werkwoordlab-items.
 You are working in the GitHub repository Loumeister/werkwoordlab.
 
 Task
-Implement the first small shared-content consumption path from `shared/grammar-core/` into Werkwoordlab.
+Implement the first small shared-content consumption path from `/shared/grammar-core/` into Werkwoordlab.
 
 Goal
 Consume a small part of the shared canonical sentence layer without rewriting the whole content system.
 
 Required reading
 - local content model and loaders
-- `shared/grammar-core/content/shared-sentences/*`
-- `shared/grammar-core/adapters/werkwoordlab.md`
+- `/shared/grammar-core/content/shared-sentences/*`
+- `/shared/grammar-core/adapters/werkwoordlab.md`
 - local didactic/content docs
 
 Implement
@@ -388,15 +393,15 @@ Eerst governance en eerste Werkwoordlab-consumptie stabiliseren. Dan pas dezelfd
 You are working in the GitHub repository Loumeister/ontledingstrainer.
 
 Task
-Implement the first small shared-content consumption path from `shared/grammar-core/` into Ontleedlab.
+Implement the first small shared-content consumption path from `/shared/grammar-core/` into Ontleedlab.
 
 Goal
 Consume a small part of the shared canonical sentence layer without rewriting the current parsing system.
 
 Required reading
 - local sentence/challenge model
-- `shared/grammar-core/content/shared-sentences/*`
-- `shared/grammar-core/adapters/ontledingstrainer.md`
+- `/shared/grammar-core/content/shared-sentences/*`
+- `/shared/grammar-core/adapters/ontledingstrainer.md`
 - local parsing-related repo files
 
 Implement
@@ -466,8 +471,8 @@ Do NOT attempt a full cross-repo runtime integration.
 Do NOT redesign the app.
 
 Required reading
-- `shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md`
-- `shared/grammar-core/docs/grammar-platform-principles.md`
+- `/shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md`
+- `/shared/grammar-core/docs/grammar-platform-principles.md`
 - local learner flow files
 - local evaluator/feedback flow
 

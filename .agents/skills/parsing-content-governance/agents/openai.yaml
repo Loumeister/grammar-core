@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parsing Content Governance"
+  short_description: "Govern shared parsing content boundaries"
+  default_prompt: "Use $parsing-content-governance to review this parsing-content decision and protect product-local constraints."

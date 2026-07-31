@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shared Content Integration"
+  short_description: "Integrate shared content through adapters"
+  default_prompt: "Use $shared-content-integration to map canonical grammar-core content into this product explicitly."

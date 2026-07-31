@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Sync Guardian"
+  short_description: "Guard generated documentation summaries"
+  default_prompt: "Use $documentation-sync-guardian to produce an evidence-bound post-main summary under docs/auto-sync."
