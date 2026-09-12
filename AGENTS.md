@@ -6,7 +6,7 @@
 
 - Systeemgrenzen of planning: `docs/system-map.md`, `docs/roadmap.md`
 - Ontleedidactiek of ontleedfeedback: `docs/parsing-didactics-kaders.md`, `docs/feedback-authoring.md`
-- Werkwoordspelling of spellingfeedback: `docs/werkwoordspellingsdidactiek-kaders.md`, `docs/werkwoordspellingsalgoritme.md`
+- Werkwoordspelling of spellingfeedback: `docs/werkwoordspellingsdidactiek-kaders.md`, `docs/werkwoordspellingsalgoritme.md`, en bij feedback `docs/feedback-authoring.md`
 - Content of taxonomie: `docs/content-authoring-rules.md`, `docs/taxonomy-governance.md`, daarna het relevante schema
 - Subtree-sync: `docs/repo-sync-strategy.md`
 
