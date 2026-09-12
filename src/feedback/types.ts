@@ -10,7 +10,7 @@
 
 /**
  * A feedback value is either a plain string (for simple, single-step prompts)
- * or a structured rich entry (for errors that require diagnosis and reasoning).
+ * or a structured rich entry (for errors that require explanation and recovery).
  */
 export type FeedbackEntry = string | RichFeedbackEntry;
 
@@ -20,7 +20,7 @@ export interface RichFeedbackEntry {
   /** Single word from herstelvraag that anchors the expand interaction. */
   sleutelwoord: string;
   uitleg: {
-    /** What the learner probably did wrong — 1-2 sentences, "Je hebt waarschijnlijk..." */
+    /** Observable answer pattern or neutral contrast; never infer learner thinking. */
     diagnose: string;
     /** The grammar rule or distinction — 1-2 sentences. */
     redenering: string;

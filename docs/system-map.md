@@ -31,21 +31,15 @@ Bij tegenstrijdigheid geldt:
 
 Een roadmapclaim mag nooit als bestaand gedrag worden beschreven. Handmatig bijgehouden aantallen, testtotalen en subtree-hashes horen niet in architectuurdocumenten; leid ze af wanneer ze nodig zijn.
 
-## Productinvarianten
+## Gedeelde invarianten
 
-### Ontleedlab
+- Ontleden en spellen blijven afzonderlijke leerhandelingen met een expliciete overdracht ertussen.
+- Vorm en betekenis worden samen gebruikt; een grammaticale proef is een controlemiddel, geen definitie.
+- Een deterministische regel bepaalt goed of fout in de kernflow.
+- Feedback baseert zich op waarneembare invoer en geeft één concrete herstelhandeling. Zij verzint geen leerlingredenering.
+- Een app claimt geen beoordeling, identiteit of gegevensbereik dat de runtime niet werkelijk levert.
 
-- De standaardroute laat alle toepasselijke rollen tegelijk aanwijzen.
-- De Rollenladder is uitsluitend een verborgen experiment via `#/rollenladder`.
-- Alleen laddervoortgang mag lokaal bewaard blijven; activatie nooit.
-- Feedback baseert zich op de waarneembare keuze en geeft één concrete herstelhandeling. Zij verzint geen leerlingredenering.
-
-### Werkwoordlab
-
-- Grammaticale functie gaat vóór spellingregel.
-- Een deterministische evaluator bepaalt goed/fout; generatieve beoordeling hoort niet in de kernflow.
-- Voortgang en docentinzichten zijn lokaal op één browser zolang er geen echte gegevensgrens en identiteit bestaan.
-- Een transfertaak die niet werkelijk wordt beoordeeld, wordt als zelfcontrole gepresenteerd en niet als automatische rubric.
+Routes, lokale opslag, scoring, oefeningen en experimenten zijn productinvarianten. Hun gezaghebbende beschrijving staat in `docs/product-spec.md` van het betreffende product en wordt niet naar `grammar-core` gekopieerd.
 
 ## Wijzigingsroute
 

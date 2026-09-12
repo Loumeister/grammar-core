@@ -1,39 +1,21 @@
 # Roadmap
 
-_Actueel op 2026-09-12. Dit document bevat alleen nog niet afgerond werk._
+_Actueel op 2026-09-12. Alleen productoverstijgende besluiten staan hier. Uitvoering staat in de lokale productbacklogs._
 
-## Nu: betrouwbaarheid boven uitbreiding
+## Nu
 
-1. **Ontleedlab-hoofdstroom herstellen**
-   - alle toepasselijke rollen tegelijk op de standaardroute
-   - Rollenladder alleen via `#/rollenladder`, zonder blijvende activatie
-   - regressietests voor routescheiding
+1. **Feedback valideren**
+   - meet per product of een herstelvraag de tweede poging op hetzelfde contrast verbetert
+   - leg alleen een gedeelde regel vast als hetzelfde probleem in beide producten voorkomt
 
-2. **Feedback opnieuw ijken**
-   - korte herstelhandeling als standaard
-   - geen onbewezen diagnose van leerlingdenken
-   - vorm en betekenis combineren; losse trucjes zijn alleen controlemiddel
-   - foutieve of te absolute spellingregels corrigeren
+2. **Canon beheersbaar houden**
+   - wijzig gedeelde afspraken eerst in `grammar-core`
+   - synchroniseer daarna handmatig via een afzonderlijke PR per product
+   - laat CI alleen afwijkingen melden en nooit branches of PR's schrijven
 
-3. **Productclaims eerlijk maken**
-   - lokaal browseroverzicht niet als klasdata presenteren
-   - onbeoordeelde transfer niet als rubric-feedback presenteren
-   - client-side hashes en API-sleutels niet als beveiliging presenteren
-
-4. **Ontwikkelpad deterministisch maken**
-   - toevalsafhankelijke tests een vaste randombron geven
-   - test plus build in iedere product-CI
-   - automatisch gegenereerde document-PR's verwijderen
-
-## Daarna: één leerlus per product valideren
-
-### Ontleedlab
-
-Meet of een foutmelding leidt tot een betere tweede poging op hetzelfde grammaticale contrast. Herzie eerst de vaakste rolverwarringen. Splits `useTrainer.ts` alleen wanneer een concrete wijziging daardoor aantoonbaar kleiner wordt.
-
-### Werkwoordlab
-
-Valideer de zes units als één route van functiebepaling naar spelling en zelfcontrole. Maak unit 4–6 expliciet gefaseerd. Gebruik pas daarna voortgangsdrempels; twee of drie willekeurige goede antwoorden zijn geen robuust beheersingsmodel.
+3. **Gegevensgrens besluiten**
+   - beschrijf doel, minimale dataset, bewaartermijn, toegang en verwijdering vóór er een backend komt
+   - houd een eventuele koppeling tussen leerlingcode en leerlingidentiteit buiten de leerlingapp
 
 ## Beslispoorten, geen toezeggingen
 

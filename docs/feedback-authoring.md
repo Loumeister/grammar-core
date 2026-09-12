@@ -14,7 +14,7 @@ Voorbeeld:
 
 > Je koos het onderwerp als persoonsvorm. Verander de zin van tijd: welk werkwoord verandert?
 
-Gebruik standaard één korte tekst. Een uitgebreid feedbackobject is alleen gerechtvaardigd als het systeem ook een voorafgaande redenering van de leerling heeft vastgelegd. Zonder die informatie heet een verklaring geen diagnose.
+Gebruik standaard één korte tekst. Een uitgebreid feedbackobject is alleen gerechtvaardigd als extra uitleg of een herstelstap nodig is. Het bestaande veld `uitleg.diagnose` beschrijft uitsluitend een werkelijk herkend antwoordpatroon of, als dat patroon niet is vastgesteld, een neutraal grammaticaal contrast. Het schrijft de leerling geen gedachte of strategie toe.
 
 ## Inhoudelijke eisen
 
