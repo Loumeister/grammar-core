@@ -73,6 +73,8 @@ Minimaal onderscheid:
 - vormspecifieke fout of uitzonderingsfout
 - contextspecifieke fout, alleen als die didactisch aantoonbaar winst oplevert
 
+Een foutcode is geen bewijs van de precieze gedachte van de leerling. Feedback benoemt daarom eerst de waarneembare keuze, geeft één passende controlehandeling en vraagt een nieuwe toepassing. Gebruik “diagnose” alleen wanneer de redenering zelf is uitgevraagd.
+
 ### 5. Van expliciete steun naar afbouw en transfer
 Het doel is niet alleen correcte itemoplossing, maar overdraagbare toepassing in context.
 
