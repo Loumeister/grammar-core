@@ -16,6 +16,12 @@ Voorbeeld:
 
 Gebruik standaard één korte tekst. Een uitgebreid feedbackobject is alleen gerechtvaardigd als extra uitleg of een herstelstap nodig is. Het bestaande veld `uitleg.diagnose` beschrijft uitsluitend een werkelijk herkend antwoordpatroon of, als dat patroon niet is vastgesteld, een neutraal grammaticaal contrast. Het schrijft de leerling geen gedachte of strategie toe.
 
+Bij een uitgebreid feedbackobject gelden daarnaast deze UI-afspraken:
+
+- `herstelvraag` is een korte controlevraag van ongeveer vijftien woorden.
+- `sleutelwoord` komt letterlijk in `herstelvraag` voor.
+- `herprobeer` bevat één concrete herstelhandeling in de gebiedende wijs.
+
 ## Inhoudelijke eisen
 
 - Combineer vorm en betekenis. Een proef levert aanwijzingen, geen definitie.

@@ -89,13 +89,13 @@ Operationele uitwerking:
 
 Gedeelde parsinginhoud mag dus niet leunen op verborgen lokale conventies om eenduidig te lijken.
 
-### 6. Diagnostische feedback richt zich op de denkfout
-Parsingfeedback moet uitleggen waarom de gemaakte keuze niet klopt.
+### 6. Herstelfeedback richt zich op het relevante onderscheid
+Parsingfeedback moet de gemaakte keuze verbinden met een controleerbaar grammaticaal onderscheid.
 
 Minimaal bruikbare parsingfeedback maakt duidelijk:
-- welk onderscheid gemist is
+- welk onderscheid voor deze keuze relevant is
 - welke vraag of proef behulpzaam was geweest
-- welke denkstap nu hersteld moet worden
+- welke handeling de leerling nu uitvoert
 
 Operationele uitwerking:
 - Feedback mag niet blijven steken in “fout label”.

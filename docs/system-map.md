@@ -39,7 +39,7 @@ Een roadmapclaim mag nooit als bestaand gedrag worden beschreven. Handmatig bijg
 - Feedback baseert zich op waarneembare invoer en geeft één concrete herstelhandeling. Zij verzint geen leerlingredenering.
 - Een app claimt geen beoordeling, identiteit of gegevensbereik dat de runtime niet werkelijk levert.
 
-Routes, lokale opslag, scoring, oefeningen en experimenten zijn productinvarianten. Hun gezaghebbende beschrijving staat in `docs/product-spec.md` in de hoofdmap van het betreffende productrepo, dus buiten `shared/grammar-core/`, en wordt niet naar `grammar-core` gekopieerd.
+Routes, lokale opslag, scoring, oefeningen en experimenten zijn productinvarianten. Hun gezaghebbende beschrijving staat buiten `shared/grammar-core/`: in Ontleedlab is dat `SPEC.md`, in Werkwoordlab `docs/product-spec.md`. Deze contracten worden niet naar `grammar-core` gekopieerd.
 
 ## Wijzigingsroute
 

@@ -22,7 +22,7 @@ Routes, componenten, opslag, evaluators, dashboards, lokale labels en voortgangs
 - `docs/`: gedeelde afspraken
 - `schemas/`: gedeelde uitwisselingsvormen die werkelijk gebruikt worden
 - `content/`: gedeelde taxonomie en kleine zinsets
-- `adapters/`: expliciete mapping naar beide producten
+- `adapters/`: integratierichtlijnen voor beide producten
 - `.claude/agents/` en `.codex/skills/`: smalle taakhulpen; nooit een tweede canon
 
 Productrepo's spiegelen deze map onder `shared/grammar-core/` met git subtree. Verbeter gedeelde canon eerst hier, merge die wijziging en synchroniseer daarna beide productrepo's.
