@@ -20,7 +20,7 @@ Gebruik standaard één korte tekst. Een uitgebreid feedbackobject is alleen ger
 
 - Combineer vorm en betekenis. Een proef levert aanwijzingen, geen definitie.
 - Richt feedback op het onderscheid dat nodig is voor de taak.
-- Geef geen juiste label of spellingvorm voordat de leerling opnieuw kan handelen, tenzij het expliciet om uitgewerkte instructie gaat.
+- Geef niet het juiste label of de juiste spellingvorm voordat de leerling opnieuw kan handelen, tenzij het expliciet om uitgewerkte instructie gaat.
 - Gebruik een voorbeeld alleen als het het huidige contrast verheldert.
 - Schrijf concreet en in leerlingtaal; vermijd waarderende persoonsfeedback.
 - Formuleer niet absoluut wanneer er relevante uitzonderingen bestaan.

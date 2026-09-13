@@ -20,6 +20,6 @@ Wijzig nooit rechtstreeks bestanden onder `shared/grammar-core/`. Productafwijki
 
 ## Controle
 
-Product-CI vergelijkt de canonieke mappen van de subtree met `grammar-core/main`. De controle schrijft niets en opent geen PR. Na een core-merge blijven product-PR's rood totdat hun subtree is bijgewerkt.
+Ieder productrepo moet in CI de canonieke mappen van de subtree vergelijken met `grammar-core/main`. De controle mag niets schrijven en geen PR openen. Zolang deze controle nog niet op de standaardbranch staat, vergelijkt de reviewer de subtree handmatig. Na een core-merge meldt de eerstvolgende controle drift totdat de subtree is bijgewerkt.
 
 Een geïntegreerde package, plugin of monorepo is pas nodig als er werkelijk gedeelde runtimecode ontstaat.

@@ -1,16 +1,16 @@
 # Systeemkaart
 
-_Actueel op 2026-09-12._
+_Actueel op 2026-09-13._
 
 ## Bedoeling
 
-Het systeem ondersteunt één doorgaande redeneerlijn:
+De twee producten zijn bedoeld als aanvullende delen van één didactische redeneerlijn:
 
 1. Ontleedlab leert leerlingen grammaticale functies in een volledige zin vaststellen.
 2. Werkwoordlab laat leerlingen die analyse gebruiken voor werkwoordspelling en transfer.
 3. grammar-core bewaakt alleen de gedeelde taal, didactiek en uitwisselingsgrenzen.
 
-Er is nu geen derde, geïntegreerde app en geen gedeelde productruntime.
+Deze overdracht is nog geen gekoppelde productflow. Er is geen derde, geïntegreerde app en geen gedeelde productruntime.
 
 ## Eigenaarschap
 
@@ -33,13 +33,13 @@ Een roadmapclaim mag nooit als bestaand gedrag worden beschreven. Handmatig bijg
 
 ## Gedeelde invarianten
 
-- Ontleden en spellen blijven afzonderlijke leerhandelingen met een expliciete overdracht ertussen.
+- Ontleden en spellen blijven afzonderlijke leerhandelingen. Een toekomstige overdracht ertussen moet expliciet worden ontworpen en getest.
 - Vorm en betekenis worden samen gebruikt; een grammaticale proef is een controlemiddel, geen definitie.
 - Een deterministische regel bepaalt goed of fout in de kernflow.
 - Feedback baseert zich op waarneembare invoer en geeft één concrete herstelhandeling. Zij verzint geen leerlingredenering.
 - Een app claimt geen beoordeling, identiteit of gegevensbereik dat de runtime niet werkelijk levert.
 
-Routes, lokale opslag, scoring, oefeningen en experimenten zijn productinvarianten. Hun gezaghebbende beschrijving staat in `docs/product-spec.md` van het betreffende product en wordt niet naar `grammar-core` gekopieerd.
+Routes, lokale opslag, scoring, oefeningen en experimenten zijn productinvarianten. Hun gezaghebbende beschrijving staat in `docs/product-spec.md` in de hoofdmap van het betreffende productrepo, dus buiten `shared/grammar-core/`, en wordt niet naar `grammar-core` gekopieerd.
 
 ## Wijzigingsroute
 

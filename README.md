@@ -1,6 +1,6 @@
 # grammar-core
 
-Gedeelde canon voor [Werkwoordlab](https://github.com/Loumeister/werkwoordlab) en [Ontleedlab](https://github.com/Loumeister/ontledingstrainer). De twee apps blijven zelfstandige producten; deze repository deelt alleen stabiele didactiek, taxonomie, schemas en kleine contentsets.
+Gedeelde canon voor [Werkwoordlab](https://github.com/Loumeister/werkwoordlab) en [Ontleedlab](https://github.com/Loumeister/ontledingstrainer). De twee apps blijven zelfstandige producten; deze repository deelt alleen stabiele didactiek, taxonomie, schema's, kleine contentsets en werkelijk gebruikte typecontracten.
 
 ## Begin hier
 
