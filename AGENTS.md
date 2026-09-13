@@ -10,7 +10,7 @@
 - Content of taxonomie: `docs/content-authoring-rules.md`, `docs/taxonomy-governance.md`, daarna het relevante schema
 - Subtree-sync: `docs/repo-sync-strategy.md`
 
-Lees niet standaard alle documenten. Inspecteer in een productrepo eerst de lokale runtime en het lokale productcontract; die bepalen het feitelijke gedrag.
+Lees niet standaard alle documenten. Volg in een productrepo deze volgorde: de relevante gedeelde canon hierboven, het lokale productcontract en daarna alleen de relevante runtime en tests. Code en tests bepalen het feitelijke huidige gedrag.
 
 ## Grenzen
 

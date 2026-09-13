@@ -19,7 +19,7 @@ Gebruik standaard één korte tekst. Een uitgebreid feedbackobject is alleen ger
 Bij een uitgebreid feedbackobject gelden daarnaast deze UI-afspraken:
 
 - `herstelvraag` is een korte controlevraag van ongeveer vijftien woorden.
-- `sleutelwoord` komt letterlijk in `herstelvraag` voor.
+- `sleutelwoord` is één woord en komt letterlijk in `herstelvraag` voor.
 - `herprobeer` bevat één concrete herstelhandeling in de gebiedende wijs.
 
 ## Inhoudelijke eisen
