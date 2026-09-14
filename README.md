@@ -1,6 +1,6 @@
 # grammar-core
 
-Gedeelde canon voor [Werkwoordlab](https://github.com/Loumeister/werkwoordlab) en [Ontleedlab](https://github.com/Loumeister/ontledingstrainer). De twee apps blijven zelfstandige producten; deze repository deelt alleen stabiele didactiek, taxonomie, schema's, kleine contentsets en werkelijk gebruikte typecontracten.
+Gedeelde canon voor [Werkwoordlab](https://github.com/Loumeister/werkwoordlab) en [Ontleedlab](https://github.com/Loumeister/ontledingstrainer). De twee apps blijven zelfstandige producten; deze repository deelt alleen stabiele didactiek, taxonomie, schema's, kleine contentsets, werkelijk gebruikte typecontracten en smalle agent- en skillinstructies.
 
 ## Begin hier
 
@@ -25,4 +25,4 @@ Routes, componenten, opslag, evaluators, dashboards, lokale labels en voortgangs
 - `adapters/`: integratierichtlijnen voor beide producten
 - `.claude/agents/` en `.codex/skills/`: smalle taakhulpen; nooit een tweede canon
 
-Productrepo's spiegelen deze map onder `shared/grammar-core/` met git subtree. Verbeter gedeelde canon eerst hier, merge die wijziging en synchroniseer daarna beide productrepo's.
+Productrepo's spiegelen deze map onder `shared/grammar-core/` met git subtree. Die kopie maakt de canon zichtbaar; relevante gedeelde principes worden pas productbindend wanneer het lokale productcontract ze expliciet overneemt. Verbeter gedeelde canon eerst hier, merge die wijziging en synchroniseer daarna beide productrepo's.

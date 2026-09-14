@@ -100,7 +100,7 @@ Minimaal bruikbare parsingfeedback maakt duidelijk:
 Operationele uitwerking:
 - Feedback mag niet blijven steken in “fout label”.
 - Feedback is sterker wanneer ze herstelbaar is vanuit een denkhandeling of functiebepaling.
-- Noem een foutpatroon alleen een diagnose als de leerlingredenering werkelijk is uitgevraagd. Uit alleen een verkeerd label volgt hoogstens een mogelijke verwarring.
+- Een verkeerd label is geen bewijs van de precieze gedachte van de leerling. Het veld `uitleg.diagnose` benoemt een werkelijk vastgesteld antwoordpatroon of anders een neutraal grammaticaal contrast. Presenteer alleen een uitgevraagde redenering als diagnose van het denken.
 - Geef standaard één korte herstelhandeling en laat de leerling die meteen op dezelfde zin uitvoeren.
 - Gebruik een vraagproef als controlemiddel, niet als volledige definitie van een grammaticale functie.
 

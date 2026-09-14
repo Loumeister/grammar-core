@@ -5,6 +5,7 @@
 ## Lees alleen wat de taak nodig heeft
 
 - Systeemgrenzen of planning: `docs/system-map.md`, `docs/roadmap.md`
+- Feedback- of typecontract: `docs/feedback-authoring.md`, `src/feedback/types.ts`
 - Ontleedidactiek of ontleedfeedback: `docs/parsing-didactics-kaders.md`, `docs/feedback-authoring.md`
 - Werkwoordspelling of spellingfeedback: `docs/werkwoordspellingsdidactiek-kaders.md`, `docs/werkwoordspellingsalgoritme.md`, en bij feedback `docs/feedback-authoring.md`
 - Content of taxonomie: `docs/content-authoring-rules.md`, `docs/taxonomy-governance.md`, daarna het relevante schema
