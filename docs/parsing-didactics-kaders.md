@@ -39,6 +39,7 @@ Parsingonderwijs mag niet worden ingericht als een kale labeloefening.
 De leerling moet niet alleen leren **welk label** ergens hoort, maar vooral:
 - welke vraag of proef is uitgevoerd
 - welke grammaticale functie daarmee is vastgesteld
+- welke aanwijzingen in vorm én betekenis samen die analyse ondersteunen
 - waarom naburige alternatieven niet kloppen
 
 Operationele uitwerking:
@@ -88,17 +89,20 @@ Operationele uitwerking:
 
 Gedeelde parsinginhoud mag dus niet leunen op verborgen lokale conventies om eenduidig te lijken.
 
-### 6. Diagnostische feedback richt zich op de denkfout
-Parsingfeedback moet uitleggen waarom de gemaakte keuze niet klopt.
+### 6. Herstelfeedback richt zich op het relevante onderscheid
+Parsingfeedback moet de gemaakte keuze verbinden met een controleerbaar grammaticaal onderscheid.
 
 Minimaal bruikbare parsingfeedback maakt duidelijk:
-- welk onderscheid gemist is
+- welk onderscheid voor deze keuze relevant is
 - welke vraag of proef behulpzaam was geweest
-- welke denkstap nu hersteld moet worden
+- welke handeling de leerling nu uitvoert
 
 Operationele uitwerking:
 - Feedback mag niet blijven steken in “fout label”.
 - Feedback is sterker wanneer ze herstelbaar is vanuit een denkhandeling of functiebepaling.
+- Een verkeerd label is geen bewijs van de precieze gedachte van de leerling. Het veld `uitleg.diagnose` benoemt een werkelijk vastgesteld antwoordpatroon of anders een neutraal grammaticaal contrast. Presenteer alleen een uitgevraagde redenering als diagnose van het denken.
+- Geef standaard één korte herstelhandeling en laat de leerling die meteen op dezelfde zin uitvoeren.
+- Gebruik een vraagproef als controlemiddel, niet als volledige definitie van een grammaticale functie.
 
 ### 7. Parsing als voorwaarde voor latere werkwoordspelling
 Parsing is geen los eiland binnen het grammaticaonderwijs.
@@ -148,9 +152,9 @@ Een item is pas geschikt voor de gedeelde kern wanneer de didactische kwaliteit 
 
 ### Minimaal gedeeld feedbackmodel
 Een parsinggerichte interventie of feedbackreactie moet inhoudelijk kunnen aangeven:
-1. welk onderscheid of welke denkstap gemist is
+1. welke keuze afwijkt en welk onderscheid opnieuw gecontroleerd moet worden
 2. welke herstelvraag of proef passend is
-3. waarom een naburige verwarring begrijpelijk maar onjuist is
+3. waarom vorm en betekenis samen de naburige optie uitsluiten
 
 ### Niet canoniek op dit niveau
 Niet canoniek in `grammar-core` zijn:

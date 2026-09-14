@@ -73,6 +73,8 @@ Minimaal onderscheid:
 - vormspecifieke fout of uitzonderingsfout
 - contextspecifieke fout, alleen als die didactisch aantoonbaar winst oplevert
 
+Een foutcode is geen bewijs van de precieze gedachte van de leerling. Het veld `uitleg.diagnose` benoemt daarom een werkelijk vastgesteld antwoordpatroon of anders een neutraal grammaticaal contrast. Presenteer alleen een uitgevraagde redenering als diagnose van het denken; geef vervolgens één passende controlehandeling en vraag een nieuwe toepassing.
+
 ### 5. Van expliciete steun naar afbouw en transfer
 Het doel is niet alleen correcte itemoplossing, maar overdraagbare toepassing in context.
 
