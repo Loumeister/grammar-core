@@ -21,7 +21,7 @@ Rules:
 - inspecteer het lokale productcontract voordat je productspecifieke content, evaluatielogica of adaptermappings wijzigt; eis geen onnodige volledige repo-inspectie voor triviale taken
 - behandel productspecifieke annotatievelden, RoleKeys, JSON-shapes, chunkconventies, evaluatielogica en feedbackflows nooit als gedeelde waarheid
 - overschrijf lokaal runtimegedrag of lokale productlogica niet zonder expliciete opdracht
-- wanneer dit bestand via een productrepo-wrapper wordt gebruikt, lees dan eerst `shared/grammar-core/.Codex/agents/parsing-didactic-architect.md`, daarna het lokale productcontract en pas daarna de taakprompt
+- wanneer dit bestand via een productrepo-wrapper wordt gebruikt, lees dan eerst `shared/grammar-core/.codex/agents/parsing-didactic-architect.toml`, daarna het lokale productcontract en pas daarna de taakprompt
 
 Output must state:
 1. welk didactisch probleem wordt opgelost
